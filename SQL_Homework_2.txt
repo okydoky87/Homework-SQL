@@ -1,0 +1,33 @@
+1. SELECT * FROM username
+ORDER BY username
+
+2. SELECT * FROM phone_id
+WHERE phone_number IS 200
+
+SELECT * FROM user_id
+WHERE phone_number IS 200
+
+3. SELECT user_id, username, phone_number
+FROM table1
+INNER JOIN table2 
+ON table1.user_id = table2.user_id 
+WHERE phone_number = 202
+
+4. SELECT AVG(room_number)
+FROM table3
+
+5. SELECT phone_id FROM table2 
+HAVING phone_id IN (SELECT MAX (phone_number) FROM table2)
+
+6. SELECT room_number
+FROM (table3 INNER JOIN table2 ON table3.phone_id = table2.phone_id)
+INNER JOIN table1 ON table1.user_id = table2.user_id
+WHERE table1.username = "qux"
+
+7. SELECT user_id, username, phone_number
+FROM table2
+INNER JOIN table1 
+ON table2.user_id = table1.user_id
+WHERE username LIKE 'ba%'
+
+
